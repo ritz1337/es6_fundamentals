@@ -193,6 +193,22 @@ var fn7 = (?) => {
 "A"
 "B"
 ["C", "D", "E"]
+
+ANS:
+var someArray = ['A', 'B', 'C', 'D', 'E'];
+
+var fn7 = (arr) => {
+    //console.log goes here
+    let [one, two, ...rest] = arr
+    console.log(one, two, rest)
+}
+
+fn7(someArray)
+//Output
+//"A"
+//"B"
+//["C", "D", "E"]
+
 ```
 
 object destructuring
@@ -201,6 +217,17 @@ let node = {
     type: "Identifier", 
     name: "foo" 
 };
+
+ANS:
+let node = { 
+    type: "Identifier", 
+    name: "foo" 
+};
+
+let {type, name} = node
+console.log(type + name)
+
+
 ```
 ```javascript
 let node = { 
@@ -217,11 +244,22 @@ let node = {
             }
     } 
 };
+
+ANS:
+let {type, name, loc, loc:{start,start:{line,column}, end, end: {line: endline, column: endcolumn} } } = node
+console.log(type,name,loc, start, line, column, end, endline, endcolumn)
+
 ```
 array destructuring
 
 ```javascript
 let colors = [ "red", [ "green", "lightgreen" ], "blue" ];
+
+ANS:
+let [r, [g, lg], b] = colors;
+
+console.log(r, g, lg, b)
+
 ```
 
 ### Challenge
@@ -244,6 +282,10 @@ let node = {
     },
     range: [0, 3] 
 };
+
+let {type, name, loc, loc:{start,start:{line,column}, end, end: {line: endline, column: endcolumn} }, range, range: [a, b] } = node
+
+console.log(type,name,loc, start, line, column, end, endline, endcolumn, range, a, b)
 ```
 ---
 
