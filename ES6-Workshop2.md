@@ -121,8 +121,18 @@ let person = {
         country: 'Colombia'
     }
 }
-
+TRY ALL
+1) 
 let {name, age, address: {city, state, country}} = person;
+
+2) 
+let {name, age, address} = person
+let {city, state, country} = address
+
+3) 
+let {name, age, address, address: {city, state, country}} = person
+
+
 ```
 ### ARRAY Destructuring
 
